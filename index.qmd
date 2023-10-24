@@ -1,0 +1,9 @@
+---
+title: "The Product Counsel"
+---
+
+Quarto Website : TPC
+
+Link to [About](about.qmd)
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
