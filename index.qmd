@@ -7,3 +7,32 @@ Quarto Website : TPC
 Link to [About](about.qmd)
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+---
+title: "observable plot"
+author: "Norah Jones"
+format: 
+  html: 
+    code-fold: true
+---
+
+## Seattle Precipitation by Day (2012 to 2016)
+
+```{ojs}
+seattledata = FileAttachment("seattle-weather.csv")
+  .csv({typed: true})
+  
+Plot.plot({
+  width: 800, height: 500, padding: 0,
+  color: { scheme: "blues", type: "sqrt"},
+  y: { tickFormat: i => "JFMAMJJASOND"[i] },
+  marks: [
+    Plot.cell(seattledata, Plot.group({fill: "mean"}, {
+      x: d => new Date(d.date).getDate(),
+      y: d => new Date(d.date).getMonth(),
+      fill: "precipitation", 
+      inset: 0.5
+    }))
+  ]
+})
+```
