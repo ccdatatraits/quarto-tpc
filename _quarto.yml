@@ -9,6 +9,7 @@ website:
         text: Home
       - about.qmd
       - hello.qmd
+      - palmers.qmd
       - computations.qmd
 
 format:
@@ -16,7 +17,4 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-
-execute:
-  freeze: auto
 
